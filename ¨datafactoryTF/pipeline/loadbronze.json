@@ -161,12 +161,12 @@
 							},
 							{
 								"source": {
-									"name": "nombre_tienda",
+									"name": "cod_tienda",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "nombre_tienda",
+									"name": "cod_tienda",
 									"type": "String",
 									"physicalType": "UTF8"
 								}
