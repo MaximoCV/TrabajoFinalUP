@@ -1,0 +1,107 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSLinkedServiceTF",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "numero_embarque",
+				"type": "String"
+			},
+			{
+				"name": "numero_guia",
+				"type": "String"
+			},
+			{
+				"name": "numero_warehouse",
+				"type": "String"
+			},
+			{
+				"name": "numero_tracking",
+				"type": "String"
+			},
+			{
+				"name": "nombre_consignado",
+				"type": "String"
+			},
+			{
+				"name": "tipo_paquete",
+				"type": "String"
+			},
+			{
+				"name": "peso_usa",
+				"type": "String"
+			},
+			{
+				"name": "estado",
+				"type": "String"
+			},
+			{
+				"name": "fecha_registro_usa",
+				"type": "String"
+			},
+			{
+				"name": "descripcion",
+				"type": "String"
+			},
+			{
+				"name": "nombre_tienda",
+				"type": "String"
+			},
+			{
+				"name": "nombre_cliente",
+				"type": "String"
+			},
+			{
+				"name": " valor ",
+				"type": "String"
+			},
+			{
+				"name": "ubicacion_factura",
+				"type": "String"
+			},
+			{
+				"name": "OBSERVACIONES",
+				"type": "String"
+			},
+			{
+				"name": "TIPO DE ENTREGA",
+				"type": "String"
+			},
+			{
+				"name": "Delivery",
+				"type": "String"
+			},
+			{
+				"name": " cobro x peso ",
+				"type": "String"
+			},
+			{
+				"name": " servicio ",
+				"type": "String"
+			},
+			{
+				"name": " total ",
+				"type": "String"
+			},
+			{
+				"name": "EXTRA / DSCT",
+				"type": "String"
+			}
+		]
+	}
+}
