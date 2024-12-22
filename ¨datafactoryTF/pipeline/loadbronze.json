@@ -38,6 +38,188 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "numero_embarque",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "numero_embarque",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "numero_guia",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "numero_guia",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "numero_warehouse",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "numero_warehouse",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "numero_tracking",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "numero_tracking",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "nombre_consignado",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nombre_consignado",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "tipo_paquete",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "tipo_paquete",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "peso_usa",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "peso_usa",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "estado",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "estado",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "fecha_registro_usa",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "fecha_registro_usa",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "descripcion",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "descripcion",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "nombre_tienda",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nombre_tienda",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "cod_cliente",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cod_cliente",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "valor",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "valor",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "ubicacion_factura",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ubicacion_factura",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Delivery",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Delivery",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -50,7 +232,7 @@
 						"referenceName": "ds_adls_csv",
 						"type": "DatasetReference",
 						"parameters": {
-							"filename": "Trabajo-Final.csv"
+							"filename": "Ventas_ShipperPeru.csv"
 						}
 					}
 				],
@@ -188,7 +370,7 @@
 						"referenceName": "ds_adls_csv",
 						"type": "DatasetReference",
 						"parameters": {
-							"filename": "Clientes-Shipper-Perú.csv"
+							"filename": "Clientes_Shipper.csv"
 						}
 					}
 				],
