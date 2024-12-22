@@ -1,0 +1,9 @@
+{
+	"name": "adf-updatasciencetf-01",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fa9256db-dd13-40b0-b6c7-8e84bd26a14b",
+		"tenantId": "3705cdfe-1991-48fc-9579-b0da85eec9ee"
+	}
+}
