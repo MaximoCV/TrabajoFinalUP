@@ -1,0 +1,17 @@
+{
+	"name": "00_CREATE_TABLE_SCHEMA",
+	"properties": {
+		"content": {
+			"query": "CREATE DATABASE datasciencegp052024;\nGO\n\nUSE datasciencegp052024;\nGO\n\nCREATE SCHEMA business AUTHORIZATION dbo;\nGO\n\n--CREATE EXTERNAL TABLE\nCREATE MASTER KEY ENCRYPTION BY PASSWORD = '#MCGCPDOM202412GP05&'\nGO\n\nCREATE DATABASE SCOPED CREDENTIAL UPUserIdentity WITH IDENTITY = 'SHARED ACCESS SIGNATURE',\nSECRET = 'sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2024-12-25T08:34:34Z&st=2024-12-23T00:34:34Z&spr=https&sig=ink5lK03jrmi1dNyFIQBusr9aqpVSuU5FjacMJGDUu0%3D'\nGO\n\nUSE datasciencegp052024;\nGO\n\nCREATE EXTERNAL DATA SOURCE UPExternalDataSource\nWITH (\n    LOCATION = 'https://stdatasciencetf01.dfs.core.windows.net/',\n    CREDENTIAL = UPUserIdentity\n);\nGO\n\nCREATE EXTERNAL FILE FORMAT UPParquetFileFormat \nWITH (\n    FORMAT_TYPE = PARQUET,\n    DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'\n);\nGO\n\nCREATE EXTERNAL FILE FORMAT UPCSVFileFormat\nWITH (\n    FORMAT_TYPE = DELIMITEDTEXT,\n    FORMAT_OPTIONS (\n        PARSER_VERSION='2.0',\n        FIELD_TERMINATOR = '|',\n        STRING_DELIMITER = '\"',\n        FIRST_ROW = 2)\n)\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "datasciencegp052024",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
