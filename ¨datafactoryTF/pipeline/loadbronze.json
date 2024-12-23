@@ -289,6 +289,44 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "cod_tienda",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cod_tienda",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Tienda",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Tienda",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Categoría",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Categoría",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -358,6 +396,32 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "cod_cliente",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cod_cliente",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "nombre_cliente",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nombre_cliente",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
