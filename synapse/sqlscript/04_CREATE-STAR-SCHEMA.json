@@ -1,0 +1,17 @@
+{
+	"name": "04_CREATE-STAR-SCHEMA",
+	"properties": {
+		"content": {
+			"query": "USE datasciencegp052024;\nGO\n\nDROP EXTERNAL TABLE business.dim_tienda\nGO\n\n-----CREATE TIENDA DIM TABLE\nCREATE EXTERNAL TABLE business.dim_tienda\n WITH (\n     LOCATION = '/gold/info_tienda/dim_tienda/',\n     DATA_SOURCE = UPExternalDataSource1,  \n     FILE_FORMAT = UPParquetFileFormat\n )  \n AS\n SELECT\n CAST(p.cod_tienda as NVARCHAR) as ID_TIENDA,\n CAST(p.Tienda as NVARCHAR) as Nombre_tienda\n FROM business.sat_tienda p\nGO\n\nSELECT * FROM business.dim_tienda\nGO\n\n\n-----CREATE CLIENTE DIM TABLE\nCREATE EXTERNAL TABLE business.dim_cliente\n WITH (\n     LOCATION = '/gold/info_cliente/dim_cliente/',\n     DATA_SOURCE = UPExternalDataSource1,  \n     FILE_FORMAT = UPParquetFileFormat\n )  \n AS\n SELECT\n CAST(p.cod_cliente as NVARCHAR) as ID_CLIENTE,\n CAST(p.nombre_cliente as NVARCHAR) as Nombre_Cliente\n FROM business.sat_clientes p\nGO\n\nSELECT * FROM business.dim_cliente\nGO\n\n\nSELECT * FROM business.sat_Embarque\nGO\n\nDROP EXTERNAL TABLE business.dim_embarque\nGO\n\n-----CREATE EMBARQUE DIM TABLE\nCREATE EXTERNAL TABLE business.dim_embarque\n WITH (\n     LOCATION = '/gold/info_embarque/dim_embarque/',\n     DATA_SOURCE = UPExternalDataSource1,  \n     FILE_FORMAT = UPParquetFileFormat\n )  \n AS\n SELECT\n CAST(p.numero_embarque as NVARCHAR) as ID_EMBARQUE,\n CAST(p.numero_guia as NVARCHAR) as Numero_Guia,\n CAST(p.numero_warehouse as NVARCHAR) as Numero_Warehouse\n FROM business.sat_Embarque p\nGO\n\nSELECT * FROM business.dim_embarque\nGO\n\n\n\n---CREATE FACT EXTERNAL TABLE\nCREATE EXTERNAL TABLE business.fact_detalle_embarque\nWITH (\n    LOCATION = '/gold/info_embarque/fact_embarque/',\n    DATA_SOURCE = UPExternalDataSource1,  \n     FILE_FORMAT = UPParquetFileFormat\n)\nAS\n SELECT\n CAST(p.numero_embarque as NVARCHAR) as ID_EMBARQUE,\n CAST(p.numero_warehouse as NVARCHAR) as Numero_Warehouse,\n CAST(p.Tienda as NVARCHAR) as Nombre_tienda,\n CAST(p.nombre_cliente as NVARCHAR) as Nombre_Cliente\nFROM business.sat_Embarque p, business.dim_cliente p, business.dim_tienda p\nGO\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "datasciencegp052024",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
